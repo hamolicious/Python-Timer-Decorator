@@ -22,12 +22,13 @@ def time_taken(function):
     """
     def func_wrapper(*args, **kwargs):
         start_time = time()
-        function(*args, **kwargs)
+        output = function(*args, **kwargs)
         end_time = time()
 
         elapsed = end_time - start_time
 
         print(f'Function "{function.__name__}()"   |   Elapsed {string_from_epoh(elapsed)}')
+        return output
 
     return func_wrapper
 
